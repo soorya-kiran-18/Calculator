@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="result" readonly>
+        </div>
+        <div class="buttons">
+            <button class="clear">C</button>
+            <button class="operator">±</button>
+            <button class="operator">%</button>
+            <button class="operator">÷</button>
+            <button class="function">x²</button>
+            <button class="function">x³</button>
+            <button class="function">log</button>
+            <button class="function">ln</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">×</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">-</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">+</button>
+            <button class="number zero">0</button>
+            <button class="number">.</button>
+            <button id="bmiBtn" class="function">BMI</button>
+            <button class="equals">=</button>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+            <button id="ageBtn" class="function">Age</button>
+        </div>
+    </div>
+
+    <!-- Age Calculator Modal -->
+    <div id="ageModal" class="modal">
+        <div class="modal-content">
+            <h2>Calculate Age</h2>
+            <input type="text" id="dobInput" placeholder="DD-MM-YYYY" maxlength="10">
+            <div class="modal-buttons">
+                <button id="calculateAge">Calculate</button>
+                <button id="closeAgeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BMI Calculator Modal -->
+    <div id="bmiModal" class="modal">
+        <div class="modal-content">
+            <h2>Calculate BMI</h2>
+            <div class="input-group">
+                <input type="number" id="weightInput" placeholder="Weight (kg)" min="0" step="0.1">
+                <input type="number" id="heightInput" placeholder="Height (cm)" min="0" step="0.1">
+            </div>
+            <div class="modal-buttons">
+                <button id="calculateBMI">Calculate</button>
+                <button id="closeBMIModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

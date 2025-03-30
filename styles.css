@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    transition: background-color 0.3s ease;
+}
+
+.display {
+    margin-bottom: 30px;
+}
+
+#result {
+    width: 100%;
+    height: 80px;
+    border: none;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    text-align: right;
+    padding: 0 20px;
+    font-size: 32px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    border: none;
+    background-color: #f8f9fa;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.3s ease;
+    color: #333;
+}
+
+button:hover {
+    background-color: #e9ecef;
+}
+
+.operator {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.operator:hover {
+    background-color: #bbdefb;
+}
+
+.function {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.function:hover {
+    background-color: #c8e6c9;
+}
+
+.equals {
+    background-color: #1976d2;
+    color: white;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background-color: #1565c0;
+}
+
+.clear {
+    background-color: #e3939f;
+    color: #d00d0d;
+}
++
+.clear:hover {
+    background-color: #ffcdd2;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.theme-toggle {
+    background-color: #4a4a4a;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #5a5a5a;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    margin-bottom: 0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#calculateAge, #calculateBMI {
+    background-color: #2e7d32;
+    color: white;
+}
+
+#calculateAge:hover, #calculateBMI:hover {
+    background-color: #1b5e20;
+}
+
+#closeAgeModal, #closeBMIModal {
+    background-color: #e3939f;
+    color: #d00d0d;
+}
+
+#closeAgeModal:hover, #closeBMIModal:hover {
+    background-color: #ffcdd2;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .calculator {
+    background-color: #2d2d2d;
+}
+
+[data-theme="dark"] #result {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+[data-theme="dark"] button {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+[data-theme="dark"] button:hover {
+    background-color: #4d4d4d;
+}
+
+[data-theme="dark"] .operator {
+    background-color: #1e3a5f;
+    color: #64b5f6;
+}
+
+[data-theme="dark"] .operator:hover {
+    background-color: #2a4f7c;
+}
+
+[data-theme="dark"] .function {
+    background-color: #1b3a1b;
+    color: #81c784;
+}
+
+[data-theme="dark"] .function:hover {
+    background-color: #2a4f2a;
+}
+
+[data-theme="dark"] .equals {
+    background-color: #1565c0;
+    color: white;
+}
+
+[data-theme="dark"] .equals:hover {
+    background-color: #1976d2;
+}
+
+[data-theme="dark"] .clear {
+    background-color: #5c1a1a;
+    color: #ef5350;
+}
+
+[data-theme="dark"] .clear:hover {
+    background-color: #7c2a2a;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background-color: #ffffff;
+    color: #333;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .modal-content {
+    background-color: #2d2d2d;
+}
+
+[data-theme="dark"] .modal-content h2 {
+    color: #fff;
+}
+
+[data-theme="dark"] .modal-content input {
+    background-color: #3d3d3d;
+    border-color: #4d4d4d;
+    color: #fff;
+}
+
+[data-theme="dark"] .modal-content input::placeholder {
+    color: #888;
+}
+
+[data-theme="dark"] .modal-content input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+[data-theme="dark"] .modal-content input[type="number"]::-webkit-outer-spin-button,
+[data-theme="dark"] .modal-content input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} 
