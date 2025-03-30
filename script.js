@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let previousValue = '';
     let operation = null;
 
-    // Theme toggle functionality
+
     themeToggle.addEventListener('click', () => {
         document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
         themeToggle.textContent = document.body.dataset.theme === 'dark' ? '☀️' : '🌙';
     });
 
-    // Age calculator functionality
+
     ageBtn.addEventListener('click', () => {
         ageModal.style.display = 'block';
     });
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dobInput.value = '';
     });
 
-    // BMI calculator functionality
+
     bmiBtn.addEventListener('click', () => {
         bmiModal.style.display = 'block';
     });
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calculateBMI.addEventListener('click', () => {
         const weight = parseFloat(weightInput.value);
-        const height = parseFloat(heightInput.value) / 100; // Convert cm to meters
+        const height = parseFloat(heightInput.value) / 100; 
 
         if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
             alert('Please enter valid weight and height values');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return weight / (height * height);
     }
 
-    // Calculator functionality
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const value = button.textContent;
